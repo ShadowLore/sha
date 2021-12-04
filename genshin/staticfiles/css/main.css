@@ -1,0 +1,86 @@
+.hoho{
+    width: 100%;
+    position:fixed;
+    background-image: url( "{% static 'images/hoho.jpg' %}" );
+}
+.logo{
+    position:absolute;
+    width:300px;
+    height:100px;
+    top:40px;
+    left:40px;
+
+}
+.video-play {
+    width: 100%;
+    display:
+}
+
+.nav-masthead .nav-link {
+  padding: .25rem 2rem;
+  font-weight: 500;
+  color:lightgray;
+  margin-top:60px;
+  margin-right:60px;
+  border-radius:15px;
+  border:2px solid #e0cfc3;
+  background-color:#1A4780;
+  text-align:center;
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: -2rem;
+}
+
+.nav-masthead .active {
+  color: lightgray;
+}
+
+.click-for-video {
+  cursor: pointer;
+
+}
+
+.youtube {
+  width: 628px;
+  height: 400px;
+  position:absolute;
+  top:160px;
+  left:320px;
+
+}
+
+div.youtube {
+  display: none;
+  position:center;
+}
+.play{
+   position:absolute;
+   left:905px;
+   top:430px;
+}
+
+.kaif{
+    font-size: 14px;
+    word-spacing: 10px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+    left: 52%;
+    width: 50%;
+    height: 223px;
+    transform: translate(-50%, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fa-times::before {
+  content: '\f00d';
+  position:absolute;
+  left:970px;
+  top:155px;
+  font-size:170%;
+  color:red;
+}
