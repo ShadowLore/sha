@@ -25,12 +25,15 @@ SECRET_KEY = 'django-insecure-&qyb*9u(m6=@(3#_z4%i+1db34+8!lxfjh4p2ftw#&!+jxmm-w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '*'
+]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'acc',
     'main',
     'news',
     'gallery',
@@ -133,3 +136,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = 'news_home'
+LOGOUT_REDIRECT_URL = 'news_home'

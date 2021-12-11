@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="row justify-content-center">
+        <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 bg-white border p-3" style="margin: 200px 0px">
+            <h4 class="text-dark text-center">registration form</h4>
+            <br>
+            <form method="POST">
+                {% csrf_token %}
+                <h5 class="lead m-2 text-dark text-center">username</h5>
+                <input name="username" class="form-control" type="text" placeholder="username">
+                <h5 class="lead m-2 text-dark text-center">password</h5>
+                <input name="password1" class="form-control" type="password" placeholder="password">
+                <h5 class="lead m-2 text-dark text-center">repeat password</h5>
+                <input name="password2" class="form-control" type="password" placeholder="repeat password">
+                <br>
+                <button type="submit" class="btn bg-light border w-100">register</button>
+            </form>
+            {% for message in messages %} <!-- displaying the messages if there is any: -->
+            <br>
+            <div class="bg-warning border rounded p-1">
+                <h6 class=" text-dark text-center mt-1">{{message}}</h6>
+            </div>
+            {% endfor %}
+
+        </div>
+        <br>
+        <!-- login indicator -->
+            {% if request.user.is_authenticated %}
+            <div class="bg-primary border rounded p-1">
+                <h6 class=" text-white text-center mt-1">you are already logged in</h6>
+            </div>
+            {% endif %}
+            <h6 class="m-2 text-dark text-center"><a href="{% url 'news_home' %}" class="m-2" style="text-decoration:none; color:white;"> вернуться назад </a></h6>
+    </div>
+</div>
+
+{% endblock  %}

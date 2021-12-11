@@ -1,0 +1,5 @@
+.fon-3{
+    width: 100%;
+    position:fixed;
+    background-image: url( "{% static 'images/fon-3.png' %}" );
+}

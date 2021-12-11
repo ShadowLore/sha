@@ -1,0 +1,25 @@
+{% extends 'news/news_home.html' %}
+
+{% block title %}Удаление статей{% endblock %}
+
+{% block content %}
+        <div class="features" style="position:absolute;
+    text-align:center;
+    width: 550px;
+    height: 350px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;">
+        <h1>Удаление статей</h1>
+        <form method="post">
+            {% csrf_token %}
+            <button class="btn btn-success" type="submit">Удалить статью</button>
+        </form>
+             <h6 class="m-2 text-dark text-center">
+                <a href="{% url 'news_home' %}" class="m-2" style="position: relative; text-decoration:none; color:white; top:50px;"> вернуться назад </a>
+            </h6>
+    </div>
+{% endblock %}

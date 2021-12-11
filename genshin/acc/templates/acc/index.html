@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<!--"login indicator"-->
+{% if request.user.is_authenticated %} <!-- checking if user is logged in -->
+ <div class="bg-secondary border rounded p-1" style="margin-top: 200px;
+    text-align:center;
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;">
+    <h6 class=" text-secondary text-center mt-1">logged in as {{request.user.username}}</h6>
+</div>
+{% else %} <!-- in other case: -->
+<div class="bg-secondary border rounded p-1" style="margin-top: 200px;
+    text-align:center;
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;">
+     <h6 class=" text-white text-center mt-1">вы вышли из аккаунта</h6>
+</div>
+{% endif %}
+<div style="
+position:absolute;
+left:860px;
+top:800px;">
+    <h6 class="m-2 text-dark text-center">
+        <a href="{% url 'news_home' %}" class="m-2" style="text-decoration:none; color:white;"> вернуться назад </a>
+    </h6>
+</div>
+{% endblock  %}

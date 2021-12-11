@@ -1,16 +1,33 @@
+{% extends 'news/news_home.html' %}
 
-    <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 bg-white border p-3" style="margin: 200px 0px">
-            <h4 class="text-dark text-center">registration form</h4>
-            <br>
-            <form method="POST">
-                <input type="hidden" name="csrfmiddlewaretoken" value="lqGwHNz7UZqt3MsAxnI3CSmqULfhaCarRjr1DPVm04VKFCiaYwiKpSgX661H8USQ">
-                <h5 class="lead m-2 text-dark text-center">username</h5>
-                <input name="username" class="form-control" type="text" placeholder="username">
-                <h5 class="lead m-2 text-dark text-center">password</h5>
-                <input name="password1" class="form-control" type="password" placeholder="password">
-                <h5 class="lead m-2 text-dark text-center">repeat password</h5>
-                <input name="password2" class="form-control" type="password" placeholder="repeat password">
-                <br>
-                <button type="submit" class="btn bg-light border w-100">register</button>
-            </form>
+{% block title %}Форма по добавлению статей{% endblock %}
+
+{% block content %}
+  <div class="features"
+       style="position:absolute;
+    text-align:center;
+    width: 550px;
+    height: 650px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+   ">
+        <h1>Форма по добавлению статей</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.title }}<br>
+            {{ form.intro }}<br>
+            {{ form.full_text }}<br>
+            {{ form.date }}<br>
+            <span>{{ error }}</span>
+            <button class="btn btn-success" type="submit">Добавить статью</button>
+        </form>
+            <h6 class="m-2 text-dark text-center">
+                <a href="{% url 'news_home' %}" class="m-2" style="position: relative; text-decoration:none; color:white; top:50px;"> вернуться назад </a>
+            </h6>
     </div>
+
+{% endblock %}

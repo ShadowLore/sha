@@ -1,0 +1,27 @@
+{% extends 'news/news_home.html' %}
+
+{% block title %}Форма по добавлению статей{% endblock %}
+
+{% block content %}
+  <div class="features"
+       style="position:absolute;
+    text-align:center;
+    width: 550px;
+    height: 650px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+   ">
+        <h1>{{ article.title }}</h1>
+         <p>{{ article.date }}</p>
+        <p>{{ article.full_text }}</p>
+        <a href="{% url 'news-delete' article.id %}" class="btn btn-danger">Удалить</a>
+        <a href="{% url 'news-update' article.id %}" class="btn btn-info">Добавить изменения</a>
+        <h6 class="m-2 text-dark text-center">
+            <a href="{% url 'news_home' %}" class="m-2" style="position: relative; text-decoration:none; color:white; top:50px;"> вернуться назад </a>
+        </h6>
+    </div>
+{% endblock %}
