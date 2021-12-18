@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Articles
 from .forms import ArticlesForm
 from django.views.generic import DetailView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 
 
 def news_home(request):
@@ -24,7 +25,7 @@ class NewsUpdateView(UpdateView):
 
 class NewsDeleteView(DeleteView):
     model = Articles
-    success_url = 'news'
+    success_url = reverse_lazy('news_home')
     template_name = 'news/news-delete.html'
 
 
@@ -34,7 +35,7 @@ def create(request):
         form = ArticlesForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('news')
+            return redirect('news_home')
         else:
             error = 'Неверная форма'
 

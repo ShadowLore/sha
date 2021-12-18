@@ -67,20 +67,26 @@
 
 <body background="{% static 'images/fon.png' %}" style="background-attachment: fixed;" >
 {% block content %}
-<img class="logo" src="{% static 'images/logo.png' %}">
+<img class="logo" src="{% static 'images/logo.png' %}" style="position:fixed;">
 
-<div class="block"></div>
-    <div class="lol">
+<div class="block"  style="position:fixed;"></div>
+    <div class="lol"  style="position:fixed;">
         <a href="{% url 'register' %}" class="btn btn-primary">Регистрация</a>
         <a href="{% url 'login' %}" class="btn btn-primary">Логин</a>
         <a style="position:absolute; top:80px; right:15px;" href="{% url 'create' %}"><button class="btn btn-info"><i class="fas fa-plus-circle"></i>Добавить новость</button></a>
+        {% if request.user.is_authenticated %}
         <a style="position:absolute; top:130px; right:15px;" href="{% url 'logout' %}" class="btn btn-dark">logout</a>
+        {% endif %}
     </div>
 
+<div>
+    <h6 class="m-2 text-dark text-center" style="position:fixed; top:870px; left:1600px;">
+        <a href="{% url 'home' %}" class="m-2" style="position: relative; text-decoration:none; color:white; top:50px;"> вернуться назад </a>
+    </h6>
+</div>
 
-
-
- <div class="features" style="
+ <div class="features"
+    style="
     text-align:center;
     width: 750px;
     height: 650px;

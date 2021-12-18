@@ -25,9 +25,11 @@
             <span>{{ error }}</span>
             <button class="btn btn-success" type="submit">Добавить статью</button>
         </form>
-            <h6 class="m-2 text-dark text-center">
-                <a href="{% url 'news_home' %}" class="m-2" style="position: relative; text-decoration:none; color:white; top:50px;"> вернуться назад </a>
-            </h6>
+             <div>
+                <h6 class="m-2 text-dark text-center" style="position:fixed; top:870px; left:1600px;">
+                    <a href="{% url 'news_home' %}" class="m-2" style="position: relative; text-decoration:none; color:white; top:50px;"> вернуться назад </a>
+                </h6>
+            </div>
     </div>
 
 {% endblock %}

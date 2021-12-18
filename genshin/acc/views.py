@@ -21,7 +21,7 @@ def login(req):
         user = auth.authenticate(username=username, password=password)
         if user is not None:
             auth.login(req, user)
-            return redirect('index')
+            return redirect('news_home')
         else:
             messages.info(req, 'user not found or password is incorrect')
             return redirect('login')

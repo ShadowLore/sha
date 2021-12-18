@@ -2,8 +2,8 @@
 
 {% block content %}
 
-<!--"login indicator"-->
-{% if request.user.is_authenticated %} <!-- checking if user is logged in -->
+
+{% if request.user.is_authenticated %}
  <div class="bg-secondary border rounded p-1" style="margin-top: 200px;
     text-align:center;
     width: 200px;
@@ -16,7 +16,7 @@
     margin: auto;">
     <h6 class=" text-secondary text-center mt-1">logged in as {{request.user.username}}</h6>
 </div>
-{% else %} <!-- in other case: -->
+{% else %}
 <div class="bg-secondary border rounded p-1" style="margin-top: 200px;
     text-align:center;
     width: 200px;
